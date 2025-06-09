@@ -18,3 +18,4 @@ namespace WebAPINET8.Models
         public int Stock { get; set; }
     }
 }
+

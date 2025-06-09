@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
 async function loadBooks() {
     const response = await fetch(bookApiUrl);
     const books = await response.json();

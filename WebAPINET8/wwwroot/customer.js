@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
 async function loadCustomers() {
     const response = await fetch(customerApiUrl);
     const customers = await response.json();

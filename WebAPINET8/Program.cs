@@ -46,3 +46,4 @@ app.MapWhen(context => context.Request.Path.StartsWithSegments("/ui"), subApp =>
 });
 
 app.Run();
+
