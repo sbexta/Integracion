@@ -14,13 +14,13 @@ pipeline {
 
         stage('Construir contenedores') {
             steps {
-                sh 'docker-compose build --no-cache'
+                sh 'docker compose build --no-cache'
             }
         }
 
         stage('Verificar archivos en contenedor') {
             steps {
-                sh 'docker-compose run --rm web ls -R /app'
+                sh 'docker compose run --rm web ls -R /app'
             }
         }
 
@@ -38,7 +38,7 @@ pipeline {
     post {
         always {
             echo "Limpieza de contenedores temporales si es necesario."
-            sh 'docker-compose down --volumes --remove-orphans || true'
+            sh 'docker compose down --volumes --remove-orphans || true'
         }
     }
 }
