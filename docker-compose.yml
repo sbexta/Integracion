@@ -1,15 +1,15 @@
 version: '3.8'
 
 services:
- web:
-  build:
-    context: ./WebAPINET8
-    dockerfile: Dockerfile
-  ports:
+  web:
+    build:
+      context: ./WebAPINET8
+      dockerfile: Dockerfile
+    ports:
       - "5000:5000"
     volumes:
       - .:/app
-  container_name: app_web
+    container_name: app_web
 
   jenkins:
     image: jenkins/jenkins:lts
