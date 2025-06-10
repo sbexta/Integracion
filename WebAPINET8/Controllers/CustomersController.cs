@@ -26,7 +26,7 @@ namespace WebAPINET8.Controllers
             return Ok(result);
         }
 
-        // GET api/<CustomersController>/5
+        // GET api/<CustomersController>/5 prueba
         [HttpGet("{id}")]
         public async Task<IActionResult>  Get(int id)
         {
