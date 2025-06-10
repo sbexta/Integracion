@@ -5,9 +5,7 @@ services:
   build:
     context: ./WebAPINET8
     dockerfile: Dockerfile
-
-      
-    ports:
+  ports:
       - "5000:5000"
     volumes:
       - .:/app
