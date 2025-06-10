@@ -20,7 +20,7 @@ pipeline {
 
         stage('Verificar archivos en contenedor') {
             steps {
-               sh 'docker compose run --rm web find /app -name "*.dll"'
+               sh 'docker compose run --rm --entrypoint "" web find /app -name "*.dll"'
             }
         }
 
