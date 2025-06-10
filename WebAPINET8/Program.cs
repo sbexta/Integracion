@@ -3,7 +3,7 @@ using WebAPINET8.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configuración de conexión a base de datos
+// Configuraciï¿½n de conexiï¿½n a base de datos
 string connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING") ??
                           builder.Configuration.GetConnectionString("DefaultConnection");
 
@@ -27,7 +27,6 @@ if (app.Environment.IsDevelopment())
         c.RoutePrefix = "swagger";
     });
 }
-
 
 app.UseHttpsRedirection();
 app.UseAuthorization();

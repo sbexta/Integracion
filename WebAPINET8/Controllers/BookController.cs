@@ -32,7 +32,7 @@ namespace WebAPINET8.Controllers
         {
             var book = await _context.Books.FindAsync(id);
             if (book == null)
-                return NotFound($"No se encontró un libro con ID {id}.");
+                return NotFound($"No se encontrï¿½ un libro con ID {id}.");
             return Ok(book);
         }
 
@@ -57,7 +57,7 @@ namespace WebAPINET8.Controllers
 
             var existing = await _context.Books.FindAsync(id);
             if (existing == null)
-                return NotFound($"No se encontró un libro con ID {id}.");
+                return NotFound($"No se encontrï¿½ un libro con ID {id}.");
 
             existing.Title = book.Title;
             existing.Author = book.Author;
@@ -75,7 +75,7 @@ namespace WebAPINET8.Controllers
         {
             var book = await _context.Books.FindAsync(id);
             if (book == null)
-                return NotFound($"No se encontró un libro con ID {id}.");
+                return NotFound($"No se encontrï¿½ un libro con ID {id}.");
 
             _context.Books.Remove(book);
             await _context.SaveChangesAsync();

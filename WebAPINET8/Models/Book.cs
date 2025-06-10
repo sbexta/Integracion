@@ -6,7 +6,7 @@ namespace WebAPINET8.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "El título es obligatorio.")]
+        [Required(ErrorMessage = "El tï¿½tulo es obligatorio.")]
         public string Title { get; set; }
 
         public string Author { get; set; }
@@ -18,4 +18,3 @@ namespace WebAPINET8.Models
         public int Stock { get; set; }
     }
 }
-
