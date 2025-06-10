@@ -20,7 +20,7 @@ pipeline {
 
         stage('Verificar archivos en contenedor') {
             steps {
-                sh 'docker compose run --rm web ls -R /app'
+                sh 'docker compose run --rm web ls -R /
             }
         }
 
