@@ -37,7 +37,7 @@ pipeline {
 
     post {
         success {
-            mail to: 'destinatario@ejemplo.com',
+            mail to: 'ingjessicalderon@gmail.com',
                  subject: "✅ Pipeline exitoso: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                  body: """Hola,
 
