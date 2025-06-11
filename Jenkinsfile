@@ -36,9 +36,26 @@ pipeline {
     }
 
     post {
+        success {
+            mail to: 'destinatario@ejemplo.com',
+                 subject: "✅ Pipeline exitoso: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: """Hola,
+
+El pipeline '${env.JOB_NAME}' se ejecutó correctamente.
+
+Detalles:
+- Proyecto: ${env.JOB_NAME}
+- Ejecución: #${env.BUILD_NUMBER}
+- URL: ${env.BUILD_URL}
+
+Saludos,
+Jenkins"""
+        }
+
         always {
             echo "Limpieza de contenedores temporales si es necesario."
             sh 'docker compose down --volumes --remove-orphans || true'
         }
     }
 }
+
