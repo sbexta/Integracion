@@ -1,9 +1,29 @@
-coverage:
-  status:
-    project:
-      default:
-        target: 80%
-        threshold: 5%
-comment:
-  layout: "reach, diff, flags, files"
-  behavior: default
+name: Test and Coverage
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pytest pytest-cov codecov
+
+      - name: Run tests with coverage
+        run: |
+          pytest --cov=my_module tests/
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true
