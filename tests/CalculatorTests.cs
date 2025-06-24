@@ -1,7 +1,7 @@
 using Xunit;
-using MyApp;
+using Integracion;
 
-namespace MyApp.Tests
+namespace Integracion.Tests
 {
     public class CalculatorTests
     {
